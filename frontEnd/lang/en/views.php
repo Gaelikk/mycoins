@@ -22,6 +22,8 @@ return [
     'noCoins' => 'Sorry there are no coins for this search',
     'addPlace' => 'Add Place',
     'streetName' => 'Street Name',
-    'postalCode' => 'Code Postal',
-    'cityName' => 'City'
+    'postcode' => 'Code Postal',
+    'cityName' => 'City',
+    'allCountries' => 'All Countries',
+    'allYears' => 'All Years',
 ];

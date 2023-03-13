@@ -43,7 +43,7 @@ Route::get("locale/{id}", function ($locale) {
 Route::group(["middleware" => "auth"], function () {
     //CODE VIEWS
     Route::group(["prefix" => "profile"], function () {
-        Route::get("/", [ProfileController::class, "profile"]);
+        Route::get("/", [ProfileController::class, "profile"])->name('profile');
         Route::get("/delete/{id}", [ProfileController::class, "delete"])->name("profile.delete");
         Route::post("/update/{id}", [ProfileController::class, "update"])->name("profile.update");
     });
@@ -54,13 +54,13 @@ Route::group(["middleware" => "auth"], function () {
         Route::get("/addPlace", [PlaceController::class, "addPlace"])->name('places.addPlace');
         Route::post("/store", [PlaceController::class, "store"])->name('places.store');
     });
-    Route::get("/statistics", [StatController::class, "statistics"]);
+    Route::get("/statistics", [StatController::class, "statistics"])->name('statistics');
 
 });
 //NO AUTHENTICATED PAGES
 //USERS
 Route::group(["prefix" => "users"], function () {
-    Route::get("/", [UserController::class, "all"]);
+    Route::get("/", [UserController::class, "all"])->name('users');
     Route::get("/detailedUser/{id}", [UserController::class, "detailedUser"])->name("users.detailedUser");
     Route::get("/delete/{id}", [UserController::class, "delete"])->name("users.delete");
 });

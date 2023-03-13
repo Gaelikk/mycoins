@@ -3,51 +3,26 @@
 @endphp
 @extends('layouts.app')
 @section('content')
-    <style>
-        @media (max-width: 576px) {
-            body {
-                background-color: #212529;
-            }
-
-            .searchDiv {
-                display: none !important;
-            }
-
-            .coinsDiv {
-                justify-content: center;
-                border: none !important;
-                width: 100vw !important;
-                border-radius: 0 !important;
-            }
-        }
-
-        .searchDiv {
-            height: 200px;
-        }
-    </style>
     <div class="container-fluid">
         <div class="d-flex">
             <div class="searchDiv col-2 ms-5 me-5 border rounded">
-                <h5 class="mt-2 d-flex justify-content-center fw-bold">{{__('views.filter')}}</h5>
+                <h5 class="mt-2 d-flex justify-content-center fw-bold">@lang('views.filter')</h5>
                 {!! Form::open(['route' => 'coins.selectCoin']) !!}
-                <div class="m-2">
-                    {!! Form::select('countrySelect', $countrySelect, request()->input('countrySelect'), ['class' => 'form-select', 'onchange' => 'form.submit()','placeholder' => 'All Countries']) !!}
-                </div>
-                <div class="m-2">
+                <div class="align-content-between">
+                    {!! Form::select('countrySelect', $countrySelect, request()->input('countrySelect'), ['class' => 'form-select', 'onchange' => 'form.submit()','placeholder' => __('views.allCountries')]) !!}
                     {!! Form::select('typeSelect', $typeSelect, request()->input('typeSelect'), ['class' => 'form-select', 'onchange' => 'form.submit()']) !!}
+                    {!! Form::select('yearSelect', $yearSelect, request()->input('yearSelect'), ['class' => 'form-select', 'onchange' => 'form.submit()','placeholder' => __('views.allYears')]) !!}
+                    {!! Form::close() !!}
                 </div>
-                <div class="m-2">
-                    {!! Form::select('yearSelect', $yearSelect, request()->input('yearSelect'), ['class' => 'form-select', 'onchange' => 'form.submit()','placeholder' => 'All years']) !!}
-                </div>
-                {!! Form::close() !!}
             </div>
             <div
                 class="text-center coinsDiv bg-dark text-white justify-content-center col-12 col-sm-8 row border rounded overflow-auto">
                 @if(count($coins) <= 0)
-                    <h1 class="mt-2">{{__('views.noCoins')}}</h1>
+                    <h1 class="mt-2">@lang('views.noCoins')</h1>
                 @else
                     @foreach($coins as $coin)
-                        <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 border rounded m-3">
+                        <div class="col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 border rounded m-3"
+                             id="coinBg-{{$coin->id}}">
                             <div class="d-flex">
                                 <img class="mt-2 w-25 h-100 me-auto border border-secondary"
                                      src="{{asset('assets/flags/'.$coin->country->country_image)}}" alt="">
@@ -56,7 +31,7 @@
                                        data-bs-target="#flush-collapseOne{{$coin->id}}" data-bs-toggle="collapse">
                                         @if(Collection::where('coin_id', $coin->id)->where('year', $coin->year[0])->where('user_id',auth()->id())->count() !==0)
                                             <script>
-                                                document.getElementById('coinBg').style.backgroundColor = 'gray';
+                                                document.getElementById("coinBg-{{$coin->id}}").style.backgroundColor = 'gray';
                                             </script>
                                             <i class="text-warning bi bi-star-fill"></i>
                                         @else

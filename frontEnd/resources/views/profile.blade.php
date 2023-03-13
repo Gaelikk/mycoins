@@ -49,7 +49,7 @@
                               enctype="multipart/form-data">
                             @csrf
                             <div>
-                                <img alt="" id="imageSnippet" src="{{ asset('assets/icons/'.Auth::user()->avatar) }}">
+                                <img alt="" id="imageSnippet" src="{{ asset('assets/avatars/'.Auth::user()->avatar) }}">
                                 <div class="d-flex align-items-center mt-3">
                                     <div class="custom-input-file me-2">
                                         <input id="avatar" name="avatar" class="avatar" type="file">

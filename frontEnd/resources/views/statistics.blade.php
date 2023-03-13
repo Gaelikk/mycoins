@@ -1,53 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <style>
-        @media (max-width: 576px) {
-            body {
-                background-color: #212529;
-            }
-
-            .coinsDiv {
-                justify-content: center;
-                border: none !important;
-                width: 100vw !important;
-                border-radius: 0 !important;
-            }
-        }
-
-        .titleBar {
-            height: 15px;
-            border-bottom: 1px solid darkgray;
-        }
-
-        .circle-bg {
-            fill: none;
-            stroke: #eee;
-            stroke-width: 2.7;
-        }
-
-        .circle {
-            fill: none;
-            stroke-width: 2.8;
-            stroke-linecap: round;
-            animation: progress 1s;
-        }
-
-        @keyframes progress {
-            0% {
-                stroke-dasharray: 0 100;
-            }
-        }
-
-        .circular-chart .circle {
-            stroke: #3c9ee5;
-        }
-
-        .percentage {
-            fill: white;
-            font-size: 0.5em;
-            text-anchor: middle;
-        }
-    </style>
     <div class="d-flex justify-content-center">
         <div
             class="coinsDiv d-flex justify-content-center text-center bg-dark text-white col-12 col-sm-8 row border rounded">

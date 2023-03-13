@@ -21,4 +21,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Country::class);
     }
+    public function collection(): BelongsTo
+    {
+        return $this->belongsTo(Collection::class);
+    }
+
 }

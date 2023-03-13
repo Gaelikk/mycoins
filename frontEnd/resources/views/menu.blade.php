@@ -1,54 +1,5 @@
-    @extends('layouts.app')
+@extends('layouts.app')
 @section('content')
-    <style>
-        .commemorativeImage {
-            height: 7rem;
-            background-image: url({{ url('/assets/coins/france_2022.png') }});
-            background-size: 80%;
-            background-repeat: no-repeat;
-            background-position: left 120px center;
-        }
-
-        .circulationBg {
-            height: 7rem;
-            background-image: url({{ url('/assets/coins/france2.png') }});
-            background-size: 80%;
-            background-repeat: no-repeat;
-            background-position: left 120px center;
-        }
-
-        .swapBg {
-            height: 7rem;
-            background-image: url({{ url('/assets/icons/placeIcon.png') }});
-            background-size: 50%;
-            background-repeat: no-repeat;
-            background-position: right;
-        }
-
-        .usersBg {
-            height: 7rem;
-            background-image: url({{ url('/assets/icons/usersIcon.png') }});
-            background-size: 70%;
-            background-repeat: no-repeat;
-            background-position: right;
-        }
-
-        .statisticsIcon {
-            height: 7rem;
-            background-image: url({{ url('/assets/icons/statisticsIcon.png') }});
-            background-size: 70%;
-            background-repeat: no-repeat;
-            background-position: left 100px center;
-        }
-
-        .shopBg {
-            height: 7rem;
-            background-image: url({{ url('/assets/icons/shopIcon.png') }});
-            background-size: 45%;
-            background-repeat: no-repeat;
-            background-position: right;
-        }
-    </style>
     <div class="container-fluid">
         <div class="row row-cols-1 row-cols-sm-3 d-flex justify-content-center">
             <a href="{{ route('catalog', ['id' => 'commemorative']) }}"
@@ -69,14 +20,14 @@
                     @endauth
                 </h5>
             </a>
-            <a href="/users"
+            <a href="{{route('users')}}"
                class="usersBg bg-white m-3 col-md-3 col-sm-6 col-8 border border-3 border-dark rounded text-decoration-none text-dark">
                 <h5 class="mt-2 fw-bold">
                     {{ __('views.users') }}
                 </h5>
             </a>
             @auth()
-                <a href="/statistics"
+                <a href="{{route('statistics')}}"
                    class="statisticsIcon m-3 col-md-3 col-sm-6 col-8 border border-3 border-dark rounded text-decoration-none text-dark">
                     <h5 class="mt-2 fw-bold">
                         {{ __('views.statistics') }}

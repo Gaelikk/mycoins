@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('name')->nullable();
             $table->string('surname')->nullable();
             $table->string('avatar');
+            $table->string('isAdmin')->default(0);
             //$table->unsignedBigInteger('collection_id');
             $table->unsignedBigInteger('country_id');
             //$table->foreign('collection_id')->references('collection_id')->on('collection');

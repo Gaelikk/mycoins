@@ -10,11 +10,11 @@
     "require": {
         "php": "^8.2",
         "guzzlehttp/guzzle": "^7.5.0",
-        "laravel/framework": "^v9.50.2",
-        "laravel/sanctum": "^v3.2.1",
-        "laravel/tinker": "^v2.8.0",
-        "laravel/ui": "^4.2",
-        "laravelcollective/html": "^6.3",
+        "laravel/framework": "^v9.52.4",
+        "laravel/sanctum": "^3.x-dev",
+        "laravel/tinker": "^v2.8.1",
+        "laravel/ui": "^4.x-dev",
+        "laravelcollective/html": "^6.0.x-dev",
         "twbs/bootstrap-icons": "^1.10",
         "ext-curl": "*",
         "ext-libxml": "*",
@@ -23,13 +23,13 @@
         "ext-simplexml": "*"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^v3.8.0",
+        "barryvdh/laravel-debugbar": "^3.4.x-dev",
         "fakerphp/faker": "^v1.21.0",
-        "laravel/pint": "^v1.4.1",
-        "laravel/sail": "^v1.19.0",
+        "laravel/pint": "^v1.6.0",
+        "laravel/sail": "^v1.21.1",
         "mockery/mockery": "^1.5.1",
         "nunomaduro/collision": "^v6.4.0",
-        "phpunit/phpunit": "^9.6.3",
+        "phpunit/phpunit": "^10.0.9",
         "spatie/laravel-ignition": "^1.6.4"
     },
     "autoload": {

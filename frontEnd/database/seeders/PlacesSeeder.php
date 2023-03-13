@@ -16,7 +16,7 @@ class PlacesSeeder extends Seeder
     {
         Place::create([
             'city_name' => 'Hostalets de Balenyà',
-            'postal_code' => '08550',
+            'postcode' => '08550',
             'street_name' => 'Plaça de Bosch i Jover, 1',
             'country_id' => 205,
             'latitude' => 41.81561239511879,

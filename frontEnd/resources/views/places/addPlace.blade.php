@@ -24,8 +24,8 @@
                     <div>
                         <label for="city_name" class="mt-3 fw-bold">{{ __('views.cityName') }}</label>
                         <input class="form-control" type="text" name="city_name" id="city_name">
-                        <label for="postal_code" class="mt-3 fw-bold">{{ __('views.postalCode') }}</label>
-                        <input class="form-control" type="number" name="postal_code" id="postal_code">
+                        <label for="postcode" class="mt-3 fw-bold">{{ __('views.postcode') }}</label>
+                        <input class="form-control" type="number" name="postcode" id="postcode">
                         <label for="street_name" class="mt-3 fw-bold">{{ __('views.streetName') }}</label>
                         <input class="form-control" type="text" name="street_name" id="street_name">
                         <label for="country_id" class="mt-3 fw-bold">{{ __('auth.country') }}</label>

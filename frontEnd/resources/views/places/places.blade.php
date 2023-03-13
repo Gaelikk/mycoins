@@ -18,13 +18,11 @@
     <div class="container-fluid">
         <div class="placesDiv container col-12 col-sm-12 col-md-9 col-lg-8 col-xl-7">
             <h2>{{__('views.places')}}</h2>
-            <div class="d-flex justify-content-end">
-                <div class="searchDiv">
-                    {!! Form::open(['route' => 'places.searchPlace', 'method' => 'get']) !!}
-                    {!! Form::text('query', null, ['placeholder' => 'Search', 'class' => 'form-control']) !!}
-                    {!! Form::submit('Search', ['class' => 'btn btn-primary']) !!}
-                    {!! Form::close() !!}
-                </div>
+            <div class="d-flex">
+                {!! Form::open(['route' => 'places.searchPlace', 'method' => 'get', 'class'=> 'd-flex']) !!}
+                {!! Form::text('query', null, ['placeholder' => __('views.search'), 'class' => 'form-control']) !!}
+                {!! Form::submit(__('views.search'), ['class' => 'btn btn-primary ms-2']) !!}
+                {!! Form::close() !!}
                 <a type="text" href="{{route('places.addPlace')}}"
                    class="ms-auto btn btn-success">{{__('views.addPlace')}}</a>
             </div>
@@ -37,16 +35,21 @@
                                      src="{{asset('/assets/flags/'.$place->country->country_image)}}">
                                 <div class="ms-2">
                                     <b>{{$place->city_name}}</b>
-                                    ({{$place->postal_code}})
+                                    ({{$place->postcode}})
                                     <br>
                                     <small>{{$place->street_name}}</small>
                                 </div>
                             </div>
+                            @if($place->isAccepted)
+                                <a class="btn btn-success ms-auto me-1"><i class="bi bi-check-circle"></i></a>
+                            @else
+                                <a class="btn btn-warning ms-auto me-1"><i class="bi bi-clock"></i></a>
+                            @endif
                             <div id="map-{{$place->id}}" class="w-25"></div>
                         </div>
                     </div>
                     <script>
-                        function initMap{{$place->id}}() {
+                        {{--function initMap{{$place->id}}() {
                             @foreach($places as $plc)
                             let center{{$plc->id}} = {lat: {{$plc->latitude}}, lng: {{$plc->longitude}}};
                             let map{{$plc->id}} = new google.maps.Map(document.getElementById('map-{{$plc->id}}'), {
@@ -60,8 +63,7 @@
                             @endforeach
                         }
 
-                        window.onload = initMap{{$place->id}};
-
+                        window.onload = initMap{{$place->id}};--}}
                     </script>
                 @endforeach
             </div>

@@ -16,10 +16,11 @@ class CreatePlacesTable extends Migration
         Schema::create('places', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('city_name');
-            $table->bigInteger('postal_code');
+            $table->string('postcode');
             $table->string('street_name');
             $table->double('latitude');
             $table->double('longitude');
+            $table->string('isAccepted')->default(0);;
             $table->unsignedBigInteger('country_id');
             $table->foreign('country_id')->references('id')->on('countries');
             $table->timestamps();

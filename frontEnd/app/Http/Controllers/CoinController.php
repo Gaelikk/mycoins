@@ -27,7 +27,6 @@ class CoinController extends Controller
         ($saveColl->count() !== 0) ? $saveColl->delete() : Collection::create(['coin_id' => $coin_id, 'year' => $year, 'user_id' => auth()->id()]);
         return redirect()->back();
     }
-
     public function selectCoin(Request $request)
     {
         $cs = $request->countrySelect;

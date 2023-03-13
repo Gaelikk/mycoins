@@ -22,6 +22,8 @@ return [
     'noCoins' => 'Desculpe, não há moedas para esta pesquisa',
     'addPlace' => 'Adicionar Lugar',
     'streetName' => 'Nome da rua',
-    'postalCode' => 'Código postal',
-    'cityName' => 'Cidade'
+    'postcode' => 'Código postal',
+    'cityName' => 'Cidade',
+    'allCountries' => 'Todos os países',
+    'allYears' => 'Todos os anos',
 ];

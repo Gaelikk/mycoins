@@ -34,7 +34,7 @@ class PlaceController extends Controller
     {
         $place = new Place;
         $place->city_name = $request->city_name;
-        $place->postal_code = $request->postal_code;
+        $place->postcode = $request->postcode;
         $place->street_name = $request->street_name;
         $place->country_id = $request->selectCountry;
         $place->latitude = $request->latitude;

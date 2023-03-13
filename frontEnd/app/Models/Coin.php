@@ -20,6 +20,11 @@ class Coin extends Model
         return $this->belongsTo(Country::class);
     }
 
+    public function year(): BelongsTo
+    {
+        return $this->belongsTo(Year::class);
+    }
+
     public function collection()
     {
         return $this->belongsTo(Collection::class, 'coin_id');

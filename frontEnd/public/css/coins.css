@@ -1,0 +1,20 @@
+@media (max-width: 576px) {
+    body {
+        background-color: #212529;
+    }
+
+    .searchDiv {
+        display: none !important;
+    }
+
+    .coinsDiv {
+        justify-content: center;
+        border: none !important;
+        width: 100vw !important;
+        border-radius: 0 !important;
+    }
+}
+
+.searchDiv {
+    height: 200px;
+}
